@@ -1,0 +1,10 @@
+from repositories.database import db
+
+class Payment(db.Model):
+    #id, valor, paid, bank_payment_id, qr_code, experation_date
+    id = db.Column(db.Integer, primary_key = True)
+    value = db.Column(db.Float)
+    paid = db.Column(db.Boolean, default=False)
+    bank_payment_id = db.Column(db.Integer, nullable=True)
+    qr_code = db.Column(db.String(100), nullable=True)
+    experation_date = db.Column(db.DateTime)
